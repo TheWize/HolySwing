@@ -4,21 +4,22 @@ using Utillities;
 
 public class PlayerController : MonoBehaviour {
 
+    
     [SerializeField]
-    NonePhysicsRotatingObject2D player;
+    RotatingDimension PlayerY;
 
     // Start is called before the first frame update
     void Start() {
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-        player.Reset();
+        PlayerY.Angle = PlayerY.Transform.localRotation.y;
     }
 
 
 
     // Update is called once per frame
     void Update() {
-        player.Y.UpdateAngle(Input.GetAxis("Horizontal"));
-        player.SetAngle();
+        PlayerY.UpdateAngle(Input.GetAxis("Horizontal"));
+        PlayerY.SetAngle(Vector3.up);
     }
 
     

@@ -1,28 +1,32 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Utillities;
 
 public class SwordController : MonoBehaviour {
 
+
     [SerializeField]
-    NonePhysicsRotatingObject2D CursorRotation;
+    RotatingDimension CursorX;
+    [SerializeField]
+    RotatingDimension CursorY;
+
+    [SerializeField]
+    PhysicRotationDimension SwordX;
+    [SerializeField]
+    PhysicRotationDimension SwordY;
 
     Vector3 startpos;
 
-    [SerializeField]
-    PhysicsRotatingObject2D SwordRotation;
-    
 
     // Start is called before the first frame update
     void Start() {
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         Reset();
         startpos = transform.localPosition;
     }
 
     private void Reset() {
-        SwordRotation.Reset();
-        CursorRotation.Reset();
+        CursorX.Angle = CursorX.Transform.localRotation.x;
+        CursorY.Angle = CursorY.Transform.localRotation.y;
     }
 
 
@@ -30,17 +34,19 @@ public class SwordController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        CursorRotation.X.UpdateAngle(Input.GetAxisRaw("Mouse Y"));
-        CursorRotation.Y.UpdateAngle(Input.GetAxisRaw("Mouse X"));
-        CursorRotation.SetAngle();
+        CursorX.UpdateAngle(Input.GetAxisRaw("Mouse Y"));
+        CursorY.UpdateAngle(Input.GetAxisRaw("Mouse X"));
+        CursorX.SetAngle(Vector3.right);
+        CursorY.SetAngle(Vector3.up);
 
-        SwordRotation.X.UpdateAngle(Mathf.DeltaAngle(CursorRotation.X.Transform.localRotation.eulerAngles.x, SwordRotation.X.Transform.localRotation.eulerAngles.x));
-        SwordRotation.Y.UpdateAngle(Mathf.DeltaAngle(CursorRotation.Y.Transform.localRotation.eulerAngles.y, SwordRotation.Y.Transform.localRotation.eulerAngles.y));
-        SwordRotation.SetAngle();
+        SwordX.UpdateAngle(Mathf.DeltaAngle(CursorX.Transform.localRotation.eulerAngles.x, SwordX.Transform.localRotation.eulerAngles.x), Vector3.right);
+        SwordY.UpdateAngle(Mathf.DeltaAngle(CursorY.Transform.localRotation.eulerAngles.y, SwordY.Transform.localRotation.eulerAngles.y), Vector3.up);
+        SwordX.SetAngle(Vector3.right);
+        SwordY.SetAngle(Vector3.up);
 
         transform.localPosition = startpos;
     }
 
-    
+
 
 }
