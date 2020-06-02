@@ -22,7 +22,7 @@ public class SwordController : MonoBehaviour {
 
     private void Reset() {
         SwordRotation.Reset();
-        CursorRotation.ResetAngle();
+        CursorRotation.Reset();
     }
 
 
