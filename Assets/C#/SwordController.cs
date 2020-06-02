@@ -19,6 +19,7 @@ public class SwordController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        SwordX.Rigidbody.centerOfMass = new Vector3 (0f, 0f, -1.65f);
         Cursor.lockState = CursorLockMode.Locked;
         Reset();
         startpos = transform.localPosition;
@@ -40,7 +41,7 @@ public class SwordController : MonoBehaviour {
         CursorY.SetAngle(Vector3.up);
 
         SwordX.UpdateAngle(Mathf.DeltaAngle(CursorX.Transform.localRotation.eulerAngles.x, SwordX.Transform.localRotation.eulerAngles.x), Vector3.right);
-        SwordY.UpdateAngle(Mathf.DeltaAngle(CursorY.Transform.localRotation.eulerAngles.y, SwordY.Transform.localRotation.eulerAngles.y), Vector3.up);
+        SwordY.UpdateAngle(Mathf.DeltaAngle(CursorY.Transform.localRotation.eulerAngles.y, SwordY.Transform.localRotation.eulerAngles.y), Vector3.down);
         SwordX.SetAngle(Vector3.right);
         SwordY.SetAngle(Vector3.up);
 
