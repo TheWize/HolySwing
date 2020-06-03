@@ -56,8 +56,8 @@ namespace Utillities {
         //float Bounciness;
 
         internal void UpdateAngle(float value, Vector3 rotationVector) {
-            Rigidbody.AddTorque(Vector3.Normalize(rotationVector) * Force * value * Time.deltaTime);
-
+            Rigidbody.AddRelativeTorque(Vector3.Normalize(rotationVector) * Force * value * Time.deltaTime);
+            //
             /* Acceleration = value * Force * Time.deltaTime * -1;
              Velocity += Acceleration;
              if (Mathf.Sign(Acceleration) != Mathf.Sign(Velocity)) {
