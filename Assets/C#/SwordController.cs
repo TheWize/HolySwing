@@ -46,7 +46,7 @@ public class SwordController : MonoBehaviour {
         CursorX.SetAngle(Vector3.right);
         CursorY.SetAngle(Vector3.up);
 
-        SwordX.UpdateAngle(Mathf.DeltaAngle(CursorX.Transform.localRotation.eulerAngles.x, SwordX.Transform.localRotation.eulerAngles.x), Vector3.right);
+        //SwordX.UpdateAngle(Mathf.DeltaAngle(CursorX.Transform.localRotation.eulerAngles.x, SwordX.Transform.localRotation.eulerAngles.x), Vector3.right);
         SwordY.UpdateAngle(Mathf.DeltaAngle(CursorY.Transform.localRotation.eulerAngles.y, SwordY.Transform.localRotation.eulerAngles.y), Vector3.up);
         SwordX.SetAngle(Vector3.right);
         SwordY.SetAngle(Vector3.up);
