@@ -319,44 +319,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d8bbe6edc38814dac89a94476dce2e, type: 3}
---- !u!114 &342714242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669455283849480001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50cd196aff7bcd04ba8a3b55fb6f9410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CursorX:
-    Transform: {fileID: 1323701455}
-    Coefficient: 200
-    MinDegree: -40
-    MaxDegree: 40
-  CursorY:
-    Transform: {fileID: 799942067}
-    Coefficient: 200
-    MinDegree: -40
-    MaxDegree: 60
-  SwordX:
-    Transform: {fileID: 5156153726938363054}
-    Rigidbody: {fileID: 3851509500135231790}
-    Force: 3
-    MinDegree: -60
-    MaxDegree: 60
-    MaxVelocity: 20
-    Drag: 0.00000001
-  SwordY:
-    Transform: {fileID: 5156153726938363054}
-    Rigidbody: {fileID: 3851509500135231790}
-    Force: 3
-    MinDegree: -60
-    MaxDegree: 80
-    MaxVelocity: 20
-    Drag: 0.00000001
 --- !u!1 &507403797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1242,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5156153726938363054}
-  - component: {fileID: 342714242}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -1301,7 +1262,7 @@ GameObject:
   - component: {fileID: 3851509500137230317}
   - component: {fileID: 8359154919827254360}
   - component: {fileID: 3851509500135231790}
-  - component: {fileID: 3851509500135231791}
+  - component: {fileID: 3851509500135231792}
   m_Layer: 0
   m_Name: SwordModel
   m_TagString: Untagged
@@ -1325,51 +1286,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 0
---- !u!144 &3851509500135231791
-CharacterJoint:
+--- !u!114 &3851509500135231792
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3851509500135231789}
-  m_ConnectedBody: {fileID: 794404816}
-  m_Anchor: {x: 0, y: 0, z: -1.65}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.29, y: -1.07, z: -2.2399998}
-  serializedVersion: 2
-  m_SwingAxis: {x: 0, y: 1, z: 0}
-  m_TwistLimitSpring:
-    spring: 0
-    damper: 0
-  m_LowTwistLimit:
-    limit: -177
-    bounciness: 0
-    contactDistance: 0
-  m_HighTwistLimit:
-    limit: 70
-    bounciness: 0
-    contactDistance: 0
-  m_SwingLimitSpring:
-    spring: 0
-    damper: 0
-  m_Swing1Limit:
-    limit: 177
-    bounciness: 0
-    contactDistance: 0
-  m_Swing2Limit:
-    limit: 3
-    bounciness: 0
-    contactDistance: 0
-  m_EnableProjection: 0
-  m_ProjectionDistance: 0.1
-  m_ProjectionAngle: 180
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baca90394dc559c40aecb51b4841ecb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3851509500135460109
 Transform:
   m_ObjectHideFlags: 0
@@ -1441,7 +1369,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669455283849480001}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.1954394, z: -0, w: 0.9807158}
   m_LocalPosition: {x: -1.29, y: -1.07, z: -2.2400002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1449,7 +1377,7 @@ Transform:
   - {fileID: 3851509500135460109}
   m_Father: {fileID: 794404812}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -22.541, z: 0}
 --- !u!64 &8359154919827254360
 MeshCollider:
   m_ObjectHideFlags: 0
